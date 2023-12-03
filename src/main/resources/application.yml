@@ -17,9 +17,13 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
         query.in_clause_parameter_padding: true
-        hbm2ddl:
-          auto: create
         format_sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      schema-locations: classpath:/schema.sql
+      data-locations: classpath:/data.sql
+      mode: always
 server:
   servlet:
     encoding:
